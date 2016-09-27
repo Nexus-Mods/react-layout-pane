@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import VendorPrefix from 'react-vendor-prefix';
 import assign from 'object-assign';
 
 export default class Flex extends Component {
@@ -18,8 +17,6 @@ export default class Flex extends Component {
         if (this.props.style) {
             assign(style, this.props.style);
         }
-
-        style = VendorPrefix.prefix({style}).style;
 
         return <div className={classes.join(' ')} style={style}>{this.props.children}</div>;
     }
