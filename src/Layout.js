@@ -8,7 +8,7 @@ export default class Layout extends Component {
         if (this.props.className) {
             classes.push(this.props.className);
         }
-        classes.push(this.props.type);
+        classes.push('layout-' + this.props.type);
 
         let style = {
             display: 'flex',
