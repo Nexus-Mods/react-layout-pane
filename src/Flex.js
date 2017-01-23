@@ -18,7 +18,11 @@ export default class Flex extends Component {
             assign(style, this.props.style);
         }
 
-        return <div className={classes.join(' ')} style={style}>{this.props.children}</div>;
+        let restProps = assign({}, this.props);
+        delete restProps.className;
+        delete restProps.style;
+
+        return <div className={classes.join(' ')} style={style} {...restProps}>{this.props.children}</div>;
     }
 }
 
