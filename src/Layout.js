@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import assign from 'object-assign';
 
 export default class Layout extends Component {
 
@@ -23,10 +22,10 @@ export default class Layout extends Component {
         style.flexDirection = (this.props.type === 'column') ? 'column' : 'row';
 
         if (this.props.style) {
-            assign(style, this.props.style);
+            Object.assign(style, this.props.style);
         }
 
-        let restProps = assign({}, this.props);
+        let restProps = Object.assign({}, this.props);
         delete restProps.className;
         delete restProps.style;
 
